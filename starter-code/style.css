@@ -1,0 +1,96 @@
+  
+ @font-face{
+    font-family:'JetBrains Mono';
+    src: url("./assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format('truetype');
+    font-weight:100 900;
+    font-style:normal;
+  }
+:root {
+  /* Colors */
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey_950: hsl(255, 22%, 4%);
+  --grey_900: hsl(248, 17%, 9%);
+  --grey_850: hsl(248, 15%, 11%);
+  --grey_800: hsl(248, 10%, 15%);
+  --grey_700: hsl(248, 5%, 34%);
+  --grey_600: hsl(251, 9%, 53%);
+  --grey_200: hsl(252, 11%, 91%);
+  --green_200: hsl(127, 100%, 82%);
+  --yellow_300: hsl(42, 91%, 68%);
+  --orange_400: hsl(13, 95%, 66%);
+  --red_500: hsl(0, 91%, 63%);
+  --gradient-1: linear-gradient(to right, hsl(248, 17%, 9%), hsl(255, 22%, 4%));
+
+  /* Typography */
+--ff:"JetBrains Mono", monospace;
+  /* Text Preset 1  JetBrains Mono Bold */
+  --fs_1: 2rem; /* 32px */
+  --lh_1: 2.625rem; /* 42px */
+  --ls_1: 0;
+
+  /* Text Preset 2  JetBrains Mono Bold */
+  --fs_2: 1.5rem; /* 24px */
+  --lh_2: 2rem; /* 32px */
+  --ls_2: 0;
+
+  /* Text Preset 3  JetBrains Mono Bold */
+  --fs_3: 1.125rem; /* 18px */
+  --lh_3: 1.5rem; /* 32px */
+  --ls_3: 0;
+
+  /* Text Preset 4  JetBrains Mono Bold */
+  --fs_4: 1rem; /* 16px */
+  --lh_4: 1.25rem; /* 20px */
+  --ls_4: 0;
+
+  /* Spacing */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-700: 3.5rem; /* 56px */
+  --spacing-1000: 5rem; /* 80px */
+  --spacing-1300: 6.5rem; /* 104px */
+  --spacing-1600: 8rem; /* 128px */
+  --spacing-2000: 10rem; /* 160px */
+  --spacing-2200: 11rem; /* 176px */
+  --spacing-2300: 11.5rem; /* 184px */
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: var(--ff);
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+}
+.app-wrapper{
+  /* preferred = minPx + ( (maxPx - minPx) / (1440px - 375px) ) * 100vw */
+  width:clamp(
+  343px,
+  343px + (540 - 343) * ((100vw - 375px) / (1440 - 375)),
+  540px
+);
+  max-width: 540px;
+  background-color: aliceblue;
+ 
+}
+
+.password-gen{
+  display: flex;
+  flex-direction: column;
+ gap: var(--spacing-400);
+}
+.password-gen__title{
+  font-size: var(--fs_2);
+  line-height: var(--lh_2);
+ letter-spacing: var(--ls_2);
+ color: var(--grey_600);
+ text-align: center;
+}
