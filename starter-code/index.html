@@ -16,33 +16,32 @@
  <main class="app-wrapper">
     <section class="password-gen">
       <header>
-        <h1 class="password-gen__title">Password Generator</h1>
+        <h1 class="password-gen_title">Password Generator</h1>
       </header>
 
-      <div class="password-gen__output">
+      <div class="password-gen_output">
         <input 
           type="text" 
-          class="password-gen__text" 
+          class="password-gen_text" 
           value="P4$5W0rD!" 
           readonly 
           aria-label="Generated Password"
         >
-        <button class="password-gen__copy-btn" aria-label="Copy Password">
-          <img src="./assets/images/icon-copy.svg" alt="" aria-hidden="true">
+        <button class="password-gen_copy-btn" aria-label="Copy Password">
+          <img src="./assets/images/icon-copy.svg" alt="icon-copy" aria-hidden="true">
         </button>
       </div>
 
-      <form class="password-gen__body">
-        
+      <form class="password-gen_body">
         <div class="character-length">
-          <div class="character-length__header">
-            <label for="length-slider" class="character-length__label">Character Length</label>
-            <span class="character-length__value" id="length-value">10</span>
+          <div class="character-length_header">
+            <label for="length-slider" class="character-length_label">Character Length</label>
+            <span class="character-length_value" id="length-value">10</span>
           </div>
           <input 
             type="range" 
             id="length-slider" 
-            class="character-length__slider" 
+            class="character-length_slider" 
             min="0" 
             max="20" 
             value="10"
@@ -50,46 +49,46 @@
         </div>
 
         <div class="settings">
-          <div class="settings__item">
+          <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <span class="checkbox__box"></span> <span class="checkbox__label">Include Uppercase Letters</span>
+              <input type="checkbox" class="checkbox_input">
+              <span class="checkbox_box"></span> <span class="checkbox_label">Include Uppercase Letters</span>
             </label>
           </div>
 
-          <div class="settings__item">
+          <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <span class="checkbox__box"></span>
-              <span class="checkbox__label">Include Lowercase Letters</span>
+              <input type="checkbox" class="checkbox_input">
+              <span class="checkbox_box"></span>
+              <span class="checkbox_label">Include Lowercase Letters</span>
             </label>
           </div>
 
-          <div class="settings__item">
+          <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <span class="checkbox__box"></span>
-              <span class="checkbox__label">Include Numbers</span>
+              <input type="checkbox" class="checkbox_input">
+              <span class="checkbox_box"></span>
+              <span class="checkbox_label">Include Numbers</span>
             </label>
           </div>
 
-          <div class="settings__item">
+          <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox__input">
-              <span class="checkbox__box"></span>
-              <span class="checkbox__label">Include Symbols</span>
+              <input type="checkbox" class="checkbox_input">
+              <span class="checkbox_box"></span>
+              <span class="checkbox_label">Include Symbols</span>
             </label>
           </div>
         </div>
 
         <div class="strength-meter">
-          <span class="strength-meter__label">Strength</span>
-          <div class="strength-meter__indicator">
-            <span class="strength-meter__text">MEDIUM</span>
-            <div class="strength-meter__bars">
-              <div class="bar bar--active"></div>
-              <div class="bar bar--active"></div>
-              <div class="bar bar--active"></div>
+          <span class="strength-meter_label">Strength</span>
+          <div class="strength-meter_indicator">
+            <span class="strength-meter_text">MEDIUM</span>
+            <div class="strength-meter_bars">
+              <div class="bar bar-active"></div>
+              <div class="bar bar-active"></div>
+              <div class="bar bar-active"></div>
               <div class="bar"></div>
             </div>
           </div>
