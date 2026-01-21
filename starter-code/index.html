@@ -36,7 +36,7 @@
         <div class="character-length">
           <div class="character-length_header">
             <label for="length-slider" class="character-length_label">Character Length</label>
-            <span class="character-length_value" id="length-value">10</span>
+            <span class="character-length_value" id="length-value">0</span>
           </div>
           <input 
             type="range" 
@@ -51,14 +51,14 @@
         <div class="settings">
           <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox_input">
+              <input type="checkbox" id="uppercase" class="checkbox_input">
               <span class="checkbox_box"></span> <span class="checkbox_label">Include Uppercase Letters</span>
             </label>
           </div>
 
           <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox_input">
+              <input type="checkbox" id="lowercase" class="checkbox_input">
               <span class="checkbox_box"></span>
               <span class="checkbox_label">Include Lowercase Letters</span>
             </label>
@@ -66,7 +66,7 @@
 
           <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox_input">
+              <input type="checkbox" id="numbers" class="checkbox_input">
               <span class="checkbox_box"></span>
               <span class="checkbox_label">Include Numbers</span>
             </label>
@@ -74,7 +74,7 @@
 
           <div class="settings_item">
             <label class="checkbox">
-              <input type="checkbox" class="checkbox_input">
+              <input type="checkbox" id="symbols" class="checkbox_input">
               <span class="checkbox_box"></span>
               <span class="checkbox_label">Include Symbols</span>
             </label>
@@ -103,5 +103,6 @@
     </section>
 
   </main>
+  <script src="main.js"></script>
   </body>
 </html>
