@@ -23,3 +23,13 @@ copyBtn.addEventListener("click",()=>{
 generateButton.addEventListener("click", ()=>{
 console.log(passwordGenText.value);
 })
+characterLengthSlider.addEventListener("input",(e)=>{
+ const currentValue = e.target.value;
+
+ const min=e.target.min;
+ const max=e.target.max;
+    const percentage=((currentValue - min) * 100) / (max - min);  
+    e.target.style.background = `linear-gradient(to right, #A4FFAF ${percentage}%, #18171F ${percentage}%)`;
+
+    console.dir(e.target);
+});
