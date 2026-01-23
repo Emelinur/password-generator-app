@@ -20,16 +20,40 @@ copyBtn.addEventListener("click",()=>{
  console.log(copy)
 })
 
-generateButton.addEventListener("click", ()=>{
-console.log(passwordGenText.value);
-})
 characterLengthSlider.addEventListener("input",(e)=>{
  const currentValue = e.target.value;
-
  const min=e.target.min;
  const max=e.target.max;
     const percentage=((currentValue - min) * 100) / (max - min);  
-    e.target.style.background = `linear-gradient(to right, #A4FFAF ${percentage}%, #18171F ${percentage}%)`;
-
-    console.dir(e.target);
+    e.target.style.background = `linear-gradient(to right, #A4FFAF ${percentage}%, #18171F ${percentage}%)`
+    ;
 });
+
+
+
+
+generateButton.addEventListener("click", ()=>{
+
+  if(uppercaseCheckbox.checked){
+passwordGenText.value=uppercaseChars[Math.floor(Math.random()*uppercaseChars.length)]
+console.log(passwordGenText.value)
+  }
+   if(lowerCaseCheckbox.checked){
+passwordGenText.value=lowercaseChars[Math.floor(Math.random()*lowercaseChars.length)]
+console.log(passwordGenText.value)
+  }
+  if(numbersCheckbox.checked){
+passwordGenText.value=numberChars[Math.floor(Math.random()*10)]
+console.log(passwordGenText.value)
+  }
+  if(symbolsCheckbox.checked){
+passwordGenText.value=symbolsChars[Math.floor(Math.random()*symbolsChars.length)]
+console.log(passwordGenText.value)
+  }
+
+
+})
+
+
+
+
