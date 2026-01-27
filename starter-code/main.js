@@ -1,12 +1,13 @@
 const passwordGenText = document.querySelector(".password-gen_text");
 const copyBtn = document.querySelector(".password-gen_copy-btn");
 const LengthSlider = document.querySelector("#length-slider");
+const sliderValue = document.querySelector("#length-value");
 const uppercaseCheckbox = document.querySelector("#uppercase");
 const lowerCaseCheckbox = document.querySelector("#lowercase");
 const numbersCheckbox = document.querySelector("#numbers");
 const symbolsCheckbox = document.querySelector("#symbols");
 const strengthMeterText = document.querySelector(".strength-meter_text");
-const strengthMeterBars = document.querySelector(".strength-meter_bars");
+const bars = document.querySelectorAll(".bar");
 const generateButton = document.querySelector(".generate-btn");
 
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -25,6 +26,7 @@ LengthSlider.addEventListener("input", (e) => {
   const max = e.target.max;
   const percentage = ((currentValue - min) * 100) / (max - min);
   e.target.style.background = `linear-gradient(to right, #A4FFAF ${percentage}%, #18171F ${percentage}%)`;
+  sliderValue.innerText = LengthSlider.value;
 });
 
 generateButton.addEventListener("click", () => {
@@ -43,8 +45,36 @@ generateButton.addEventListener("click", () => {
     passwordPool += symbolsChars;
   }
   let slider = LengthSlider.value;
-  for (i = 0; i < slider; i++) {
+
+  for (let i = 0; i < slider; i++) {
     let randomOrder = Math.floor(Math.random() * passwordPool.length);
     passwordGenText.value += passwordPool[randomOrder];
-  }
+} 
+
+
+let point = 0;
+
+if (slider <= 5) {
+    point = 1;
+    strengthMeterText.innerText = "TOO WEAK!"; 
+} else if (slider <= 10) {
+    point = 2;
+    strengthMeterText.innerText = "WEAK";
+} else if (slider <= 15) {
+    point = 3;
+    strengthMeterText.innerText = "MEDIUM";
+} else {
+    point = 4;
+    strengthMeterText.innerText = "STRONG";
+}
+
+
+bars.forEach((bar, index) => {
+    bar.classList.remove("bar-active");
+    bar.style.backgroundColor = "";
+
+    if (index < point) {
+        bar.classList.add("bar-active");
+    }
+});
 });

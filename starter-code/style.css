@@ -300,7 +300,6 @@ input[type="checkbox"]:checked {
   gap: 10px;
 }
 .strength-meter_text {
-  display: none;
   font-size: var(--fs_3);
   line-height: var(--lh_3);
   letter-spacing: var(--ls_3);
@@ -317,8 +316,9 @@ input[type="checkbox"]:checked {
   border: 1px solid var(--white);
 }
 .bar-active {
-  /* background-color: var(--yellow_300); */
+background-color: var(--yellow_300);
 }
+
 .generate-btn {
   width: 100%;
   display: flex;
