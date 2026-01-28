@@ -147,6 +147,8 @@ body {
 .password-gen_output {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-200);
   background-color: var(--grey_800);
   padding: var(--spacing-200) var(--spacing-400);
 }
@@ -159,7 +161,19 @@ body {
   letter-spacing: var(--ls_1);
   color: var(--grey_700);
 }
+.password-gen_copyied_Text{
+  display: none;
+   font-size: var(--fs_4);
+  line-height: var(--lh_4);
+  letter-spacing: var(--ls_4);
+  color: var(--green_200);
+  text-align: center;
+}
 .password-gen_copy-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200);
   background-color: var(--grey_800);
   border: 0;
 }

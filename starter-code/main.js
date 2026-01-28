@@ -1,5 +1,6 @@
 const passwordGenText = document.querySelector(".password-gen_text");
 const copyBtn = document.querySelector(".password-gen_copy-btn");
+const copyBtnText = document.querySelector(".password-gen_copyied_Text");
 const LengthSlider = document.querySelector("#length-slider");
 const sliderValue = document.querySelector("#length-value");
 const uppercaseCheckbox = document.querySelector("#uppercase");
@@ -15,11 +16,19 @@ const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
 const numberChars = "0123456789";
 const symbolsChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
+
+// password Copy
 copyBtn.addEventListener("click", () => {
   let copy = passwordGenText.value;
-  console.log(copy);
+  if (!passwordGenText.value) return;
+  navigator.clipboard.writeText(passwordGenText.value);
+  copyBtnText.style.display = "block";
+  setTimeout(() => {
+    copyBtnText.style.display = "none";
+  }, 2000);
 });
 
+// Character Slider
 LengthSlider.addEventListener("input", (e) => {
   const currentValue = e.target.value;
   const min = e.target.min;
@@ -29,7 +38,9 @@ LengthSlider.addEventListener("input", (e) => {
   sliderValue.innerText = LengthSlider.value;
 });
 
-generateButton.addEventListener("click", () => {
+// Generate Button
+
+  // Character checkbox 
   passwordGenText.value = "";
   let passwordPool = "";
   if (uppercaseCheckbox.checked) {
@@ -44,37 +55,39 @@ generateButton.addEventListener("click", () => {
   if (symbolsCheckbox.checked) {
     passwordPool += symbolsChars;
   }
-  let slider = LengthSlider.value;
+generateButton.addEventListener("click", () => {
+  if (passwordPool === "") {
+    return;
+}
 
+  let slider = LengthSlider.value;
   for (let i = 0; i < slider; i++) {
     let randomOrder = Math.floor(Math.random() * passwordPool.length);
     passwordGenText.value += passwordPool[randomOrder];
-} 
+  }
 
-
-let point = 0;
-
-if (slider <= 5) {
+// Password Strength
+  let point = 0;
+  if (slider <= 5) {
     point = 1;
-    strengthMeterText.innerText = "TOO WEAK!"; 
-} else if (slider <= 10) {
+    strengthMeterText.innerText = "TOO WEAK!";
+  } else if (slider <= 10) {
     point = 2;
     strengthMeterText.innerText = "WEAK";
-} else if (slider <= 15) {
+  } else if (slider <= 15) {
     point = 3;
     strengthMeterText.innerText = "MEDIUM";
-} else {
+  } else {
     point = 4;
     strengthMeterText.innerText = "STRONG";
-}
+  }
 
-
-bars.forEach((bar, index) => {
+  bars.forEach((bar, index) => {
     bar.classList.remove("bar-active");
     bar.style.backgroundColor = "";
 
     if (index < point) {
-        bar.classList.add("bar-active");
+      bar.classList.add("bar-active");
     }
-});
+  });
 });
