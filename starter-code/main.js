@@ -39,7 +39,7 @@ LengthSlider.addEventListener("input", (e) => {
 });
 
 // Generate Button
-
+generateButton.addEventListener("click", () => {
   // Character checkbox 
   passwordGenText.value = "";
   let passwordPool = "";
@@ -55,17 +55,22 @@ LengthSlider.addEventListener("input", (e) => {
   if (symbolsCheckbox.checked) {
     passwordPool += symbolsChars;
   }
-generateButton.addEventListener("click", () => {
-  if (passwordPool === "") {
-    return;
-}
 
+if (passwordPool === "") {
+        strengthMeterText.innerText = "";
+        bars.forEach(bar => {
+            bar.classList.remove("bar-active");
+            bar.style.backgroundColor = "";
+        });
+        return;
+    }
   let slider = LengthSlider.value;
+
   for (let i = 0; i < slider; i++) {
     let randomOrder = Math.floor(Math.random() * passwordPool.length);
     passwordGenText.value += passwordPool[randomOrder];
   }
-
+  
 // Password Strength
   let point = 0;
   if (slider <= 5) {
