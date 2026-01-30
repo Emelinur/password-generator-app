@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add your GitHub Repo URL here](https://github.com/Emelinur/password-generator-app)
-- Live Site URL: [Add your Live Site URL here](https://emelinur.github.io/password-generator-app/)
+- Solution URL: (https://www.frontendmentor.io/solutions/password-generator-app-wzLgBzAABG)
+- Live Site URL: (https://emelinur.github.io/password-generator-app/)
 
 ## My process
 
