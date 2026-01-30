@@ -32,7 +32,7 @@ Users should be able to:
 ![](./screenshot.jpg)
 | Desktop                        | Mobile               | Tablet |
 | ------------------------------ | -------------------- | ---------------------- |
-| ![Desktop](./starter-code/assets/images/desktop.png) | ![Mobile](./starter-code/assets/images/mobile.png) | ![Tablet](./starter-code/assets/images/tablet.png) |
+| ![Desktop](./assets/images/desktop.png) | ![Mobile](./assets/images/mobile.png) | ![Tablet](./assets/images/tablet.png) |
 
 ### Links
 
