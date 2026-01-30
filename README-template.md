@@ -97,7 +97,6 @@ for (let i = 0; i < slider; i++) {
   passwordGenText.value += passwordPool[randomOrder];
 }
 ```
-
 ### Continued development
 
 In future projects, I want to continue focusing on writing cleaner, modular JavaScript code. This project helped me realize how important logic building is, and I plan to apply these skills as I move towards more complex applications and eventually backend development.
